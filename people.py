@@ -4,8 +4,7 @@ import time
 import threading
 links = []
 names = []
-emails= []
-phones= []
+
 
 
 completeScrape = False
@@ -135,11 +134,6 @@ for entry in newLinks:
 
     previousEntry = entry
     counter += 1
-
-
-
-print(emails)
-print(phones)
 
 nameFile.close()
 emailFile.close()
