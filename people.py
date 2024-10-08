@@ -116,7 +116,7 @@ phoneFile = open("phoneFile.txt","a")
 previousEntry = ''
 counter = 1
 for entry in newLinks:
-    if entry == 'N/A':
+    if entry == 'N/A' or entry.__contains__('N/A'):
         continue
 
     if not(entry.__contains__('@')) and not(entry.__contains__('+')) and not(entry.__contains__('tel:')):
@@ -127,8 +127,7 @@ for entry in newLinks:
         phoneFile.write(entry+'\n')
     
     if (not(entry.__contains__('@')) and not(entry.__contains__('+'))) and (not(previousEntry.__contains__('@')) and not(previousEntry.__contains__('+'))) and counter != 1:
-        emailFile.write('N/A \n')
-        phoneFile.write('N/A \n')
+        continue
     elif (not(entry.__contains__('@')) and not(entry.__contains__('+'))) and (previousEntry.__contains__('@')) and counter != 1:
         phoneFile.write('N/A \n')
 
