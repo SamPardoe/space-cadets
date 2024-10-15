@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#An interpretor for the BareBones esolang
+
 #Find the start index of the nth word in a given string
 finder () { 
 	local n=$1
@@ -18,7 +20,6 @@ finder () {
 		else
 			((indexhold+=1))
 		fi
-		
 	done
 	echo $indexhold
 }
