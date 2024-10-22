@@ -85,9 +85,6 @@ do
 				echo "i is $i"
 			fi
 		fi
-	elif [[ $currentInstr =~ "fi" ]]
-	then
-		if [[ ${#} ]]
 	#check if clear
 	elif [[ $currentInstr =~ "clear" ]]
 	then
@@ -210,7 +207,6 @@ do
 		((i+=1))
 	elif [[ $currentInstr =~ "=" ]]
 	then
-		
 		#locationEnd=$(finder "1" "$currentInstr")
 		#echo ${currentInstr:$locationEnd:1}
 		#location=${currentInstr:0:$(($locationEnd))} #the variable to write the result to
@@ -235,14 +231,10 @@ do
 		#update/create
 		valArray[$location]=$paramV
 		((i+=1))
-	elif [[ $currentInstr =~ "if" ]]
-	then
-			
 	else
 		echo "error unrecognised command"
 		echo $currentInstr $i
 		brokenTF=true
-	
 	fi
 	if [[ $i -eq ${#array[@]} ]]
 	then
